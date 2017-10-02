@@ -8,33 +8,67 @@ public class ArrayApp {
 
 
     String[] buildEmptyArray(int size){
-        return null;
+    	String[] emptyArray = new String[size];
+    	return emptyArray;
     }
 
     int[] buildArray(int a, int b, int c){
-        return null;
+        int[] array = {a, b, c};
+        return array;
     }
 
 
     boolean equality(int[] array1, int[] array2){
 
-        return false;
+        if (array1.length != array2.length){
+        	return false;
+        }
+        for (int i = 0; i<array1.length; i++){
+        	if (array1[i] != array2[i]){
+        		return false;
+        	}
+        }
+        return true;
     }
 
     String asString (int [] numbers){
-        return null;
+        String chaine = "";
+        for (int i = 0; i<numbers.length; i++){
+        	chaine += numbers[i] + ":";
+        }
+        return chaine;
     }
 
     String asStringJoin (int [] numbers){
-        return null;
+    	String chaine = asString(numbers);
+    	if (chaine != null && chaine.length() > 0) {
+            chaine = chaine.substring(0, chaine.length() - 1);
+        }
+        return chaine;
     }
 
     String asString (String [] strings){
-        return null;
+        String chaine="";
+        for (int i=0; i<strings.length; i++){
+        	chaine += strings[i] + " ";
+        }
+        if (chaine != null && chaine.length() > 0) {
+            chaine = chaine.substring(0, chaine.length() - 1);
+        }
+        return chaine;
     }
 
     String asString (Card [] cards){
-        return null;
+    	String chaine="[";
+    	for (int i = 0; i<cards.length; i++){
+    		chaine += cards[i] + " ";
+    	}
+    	if (chaine != null && chaine.length() > 0) {
+            chaine = chaine.substring(0, chaine.length() - 1);
+        }
+    	chaine += "]";
+    	return chaine;
+    	
     }
 
 }

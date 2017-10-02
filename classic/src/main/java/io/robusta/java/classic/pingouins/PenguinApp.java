@@ -1,6 +1,10 @@
 package io.robusta.java.classic.pingouins;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
+import javax.crypto.spec.SecretKeySpec;
 
 /**
  * Created by nicorama on 28/09/2017.
@@ -9,29 +13,58 @@ public class PenguinApp {
 
 
     Penguin createSimplePenguin(){
-        return null;
+        Penguin pingu = new Penguin("Pingu");
+        return pingu;
     }
 
 
     List<Penguin> getPenguins(Penguin p1, Penguin p2, Penguin p3, Penguin p4, Penguin p5){
-        return null;
+    	ArrayList<Penguin> listePingouins = new ArrayList<>();
+    	Collections.addAll(listePingouins, p1, p2, p3, p4, p5);
+    	ArrayList<Penguin> result = new ArrayList<>();
+    	for (Penguin pingouin : listePingouins){
+    		if (pingouin != null){
+    			result.add(pingouin);
+    		}
+    	}
+    	return result;
+    	
     }
 
     Penguin getPenguinByName(Penguin[] pingouins, String name){
-        return null;
+    	for (Penguin pingouin : pingouins){
+    		if (pingouin.getName() == name){
+    			return pingouin;
+    		}
+    	}
+    	return null;
     }
 
 
     Penguin getFastest(List<Penguin> penguins){
-        return null;
+        Penguin fastestPenguin = createSimplePenguin();
+        fastestPenguin.setSpeed(Integer.MIN_VALUE);
+        for (Penguin pingouin : penguins){
+        	if (pingouin.getSpeed() > fastestPenguin.getSpeed()){
+        		fastestPenguin = pingouin;
+        	}
+        }
+        return fastestPenguin;
     }
 
     Penguin getFriend(Penguin penguin){
-        return null;
+    	return penguin.getFriend();
     }
 
     List<Penguin> getPenguinsWithLetter(    Penguin[] pengouins, String letters){
-        return null;
+    	ArrayList<Penguin> pingouins = new ArrayList<>();
+    	for (Penguin pingouin : pengouins){
+    		if (pingouin.getName().toLowerCase().contains(letters.toLowerCase())){
+    			pingouins.add(pingouin);
+    		}
+    	}
+    	
+        return pingouins;
     }
 
     Penguin[] getPenguinsWithLetter(    List<Penguin> pengouins, String letters){
