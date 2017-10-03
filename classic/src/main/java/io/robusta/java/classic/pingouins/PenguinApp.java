@@ -68,12 +68,28 @@ public class PenguinApp {
     }
 
     Penguin[] getPenguinsWithLetter(    List<Penguin> pengouins, String letters){
-        return null;
+    	int index = 0;
+    	Penguin[] tableau = new Penguin[0];
+    	for (Penguin pingouin : pengouins){
+    		if (pingouin.getName().toLowerCase().contains(letters.toLowerCase())){
+    			Penguin[] nouveauTableau = new Penguin[index+1];
+    			System.arraycopy(tableau, 0, nouveauTableau, 0, index);
+    			tableau = nouveauTableau;
+    			tableau[index]=pingouin;
+    			index++;
+    		}
+    	}
+        return tableau;
     }
 
 
     Object getSmallestSize(Penguin[] array, List<Penguin> list){
-        return null;
+    	if (list.size() < array.length) {
+    		return list;
+		} else if(array.length < list.size()){
+    		return array;
+		}
+		return null;
     }
 
 

@@ -22,19 +22,19 @@ public class FoodApp {
     int deliver(int food){
 
     	int gross = 2*food;
-    	foodStock -= food;
+    	foodStock = foodStock - food;
     	money = money + gross - TRAVEL_COST;
         return gross;
     }
 
     int deliverAll(int count, int food){
 
-    	int value=0;
+    	int gross=0;
         for (int i=0; i<count; i++){
-        	value += deliver(food);
+        	gross = gross + deliver(food);
         }
         
-    	return value;
+    	return gross;
     }
 
 
