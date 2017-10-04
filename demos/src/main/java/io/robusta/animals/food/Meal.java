@@ -3,6 +3,7 @@ package io.robusta.animals.food;
 import io.robusta.HasPrice;
 
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 public class Meal extends ArrayList<Ingredient> {
 
@@ -29,6 +30,12 @@ public class Meal extends ArrayList<Ingredient> {
             price += ingredient.getPrice();
         }
         return price;
+    }
+
+    public Ingredient cheapest (){
+        TreeSet<Ingredient> ingredient = new TreeSet<>();
+        ingredient.addAll(this);
+        return ingredient.first();
     }
 
 }

@@ -59,5 +59,7 @@ public class FoodApplication {
 
         System.out.println(todayMeal.getPrice());
 
+        System.out.println(todayMeal.cheapest());
+
     }
 }
