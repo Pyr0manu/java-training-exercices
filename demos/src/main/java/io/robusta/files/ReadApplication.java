@@ -37,5 +37,6 @@ public class ReadApplication {
         while ((c  = reader.read()) > 0){
             System.out.print((char)c);
         }
+        reader.close();
     }
 }
