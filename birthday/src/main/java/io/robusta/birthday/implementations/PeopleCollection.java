@@ -29,8 +29,6 @@ public class PeopleCollection extends ArrayList<People>implements IPeopleCollect
 	@Override
 	public boolean hasSame() {
 
-		People temp = new People();
-
 		for (int i = 0; i<this.size()-1;i++){
 			for (int j = i+1; j<this.size();j++){
 				if (this.get(i).equals(this.get(j))){
